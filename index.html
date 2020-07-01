@@ -3,12 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>index</title>
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" type="text/css" href="./Qgis2threejs.css">
-<script src="./threejs/three.min.js"></script>
-<script src="./threejs/OrbitControls.js"></script>
 
-<script src="./Qgis2threejs.js"></script>
 </head>
 <body>
   
@@ -16,29 +11,6 @@
   <a href="https://github.com/HannayAndy/3dMaps/tree/master/3dmaphtml">Lower Ross</a>
   
 
-<!-- header and footer -->
-<div id="header"></div>
-<div id="footer"><span id="infobtn"><img src="./Qgis2threejs.png"></span> </div>
 
-<script>
-Q3D.Config.allVisible = true;
-Q3D.Config.localMode = true;
-if (typeof proj4 === "undefined") document.getElementById("lib_proj4js").style.display = "none";
-
-var app = Q3D.application,
-    container = document.getElementById("view");
-
-app.init(container);           // initialize application
-
-// load the scene
-app.loadSceneFile("./data/index/scene.js", function () {
-  app.start();
-
-  // North arrow inset
-  if (Q3D.Config.northArrow.visible) app.buildNorthArrow(document.getElementById("northarrow"), app.scene.userData.rotation);
-});
-
-document.getElementById("infobtn").onclick = app.showInfo.bind(app);
-</script>
 </body>
 </html>
